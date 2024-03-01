@@ -1,0 +1,27 @@
+name: Test Kubernetes Configuration
+
+on:
+  push:
+    branches: [ "staging", "production" ]
+  pull_request:
+    branches: [ "staging", "production" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install Kubernetes CLI
+      uses: kubernetes-sigs/kustomize/kustomize-action@v3
+      with:
+        version: latest
+
+    - name: Validate Kubernetes configuration
+      run: kubectl apply -f .
+
+    - name: Test Kubernetes deployment
+      run: kubectl rollout status deployment/mariadb
+

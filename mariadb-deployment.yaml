@@ -18,11 +18,11 @@ spec:
           ports:
             - containerPort: 3306
           env:
-            - name: MYSQL_ROOT_PASSWORD
+            - name: MARIADB_ROOT_PASSWORD
               value: yourRootPassword
-            - name: MYSQL_USER
+            - name: MARIADB_USER
               value: wordpress
-            - name: MYSQL_DATABASE
+            - name: MARIADB_DATABASE
               value: wordpressUser
-            - name: MYSQL_PASSWORD
+            - name: MARIADB_PASSWORD
               value: securepassword

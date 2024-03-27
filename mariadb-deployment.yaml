@@ -21,8 +21,8 @@ spec:
             - name: MARIADB_ROOT_PASSWORD
               value: yourRootPassword
             - name: MARIADB_USER
-              value: wordpress
-            - name: MARIADB_DATABASE
               value: wordpressUser
+            - name: MARIADB_DATABASE
+              value: wordpress
             - name: MARIADB_PASSWORD
               value: securepassword
